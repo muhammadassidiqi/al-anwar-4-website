@@ -13,7 +13,6 @@ import Card from "../CardProgram/ProgramCard";
 export default function SectionHero() {
   return (
     <>
-      {" "}
       <section className="section-hero">
         <div className="container h-100">
           {/* bacground overlay */}
@@ -86,7 +85,7 @@ export default function SectionHero() {
               <img className="w-100" src={ngaji} alt="ngaji" />
             </div>
 
-            <div className="col-md-4 col-12 ">
+            <div className="col-md-4 col-12 mt-3 ">
               <Card
                 judul={
                   <>
@@ -140,6 +139,7 @@ export default function SectionHero() {
           </div>
         </div>
       </section>
+      {/* background overlay */}
       <section className="section-hero d-flex align-items-center text-center">
         <div className="container">
           <p className="text-warning">K. H. Maimoen Zubair</p>
@@ -147,18 +147,19 @@ export default function SectionHero() {
             “Ojo mikir engko dadi opo. Sing penting saiki sinau sing sergep.”
           </h1>
           <button className="btn btn-warning m-3">AYO MONDOK SEKARANG</button>
-          {/* bacground overlay */}
+
           <div className="bg overlay-bg"></div>
           <img className="bg img-bg" src={ppp} alt="img" />
         </div>
       </section>
+      {/* card kegiatan */}
       <section>
         <div className="container m-6">
           <h2 className="text-center text-primary fw-bold m-5">
             Kegiatan pondok
           </h2>
           <div className="row">
-            <div className="col-md-4 col-12">
+            <div className="col-md-4 col-12 mt-4">
               <CardKegiatan
                 image={creative}
                 judul="creative"
@@ -167,7 +168,7 @@ export default function SectionHero() {
                 date="10/20/2024"
               />
             </div>
-            <div className="col-md-4 col-12">
+            <div className="col-md-4 col-12 mt-4">
               <CardKegiatan
                 image={belajar}
                 judul="belajar"
@@ -176,7 +177,7 @@ export default function SectionHero() {
                 date="10/20/2024"
               />
             </div>
-            <div className="col-md-4 col-12">
+            <div className="col-md-4 col-12 mt-4">
               <CardKegiatan
                 image={kecil}
                 judul="kecil"

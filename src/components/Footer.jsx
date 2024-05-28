@@ -34,7 +34,7 @@ export default function Footer() {
 
       <div className="card text-center bg-primary">
         <div className="card-body">
-          <p className="card-text">Copyrigh © 2024 Al-Anwar Media</p>
+          <p className="card-text text-white">Copyrigh © 2024 Al-Anwar Media</p>
         </div>
       </div>
     </>

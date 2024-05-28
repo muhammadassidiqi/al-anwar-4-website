@@ -5,10 +5,6 @@ export default function CardKegiatan({ image, judul, deskription, date }) {
       <div className="card-body">
         <h5 className="card-title">{judul}</h5>
         <p className="card-text">{deskription}</p>
-
-        <a href="#" className="btn btn-primary">
-          baca selanjutnya
-        </a>
       </div>
       <div class="card-footer text-body-secondary">{date}</div>
     </div>
