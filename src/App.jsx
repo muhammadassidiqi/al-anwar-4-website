@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Pendaftaran from "./pages/Pendaftaran";
+import Profil from "./pages/Profil";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="About" element={<About />} />
-        <Route path="Contact" element={<Contact />} />
+        <Route path="/pendaftaran" element={<Pendaftaran />} />
+        <Route path="/Profil" element={<Profil />} />
       </Routes>
     </BrowserRouter>
   );

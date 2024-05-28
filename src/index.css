@@ -2,7 +2,7 @@
   height: 37px
 }
 .section-hero{
-  height: 90vh;
+ 
   position: relative;
 }
 .navbar{
@@ -50,3 +50,15 @@
   border-radius: 50%;
   background-color: rgba(255, 255, 0, 0.8)
 }
+
+.section-hero{
+  
+    height: auto;
+    @media (min-width: 700px) {
+      height: 90vh;
+    }
+      
+    
+}
+
+

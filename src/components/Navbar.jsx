@@ -10,20 +10,23 @@ export default function navbar() {
           <ul className="navbar-nav ms-auto gap-2  ">
             <li>
               <NavLink className="text-white text-decoration-none " to="/">
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="text-white text-decoration-none " to="/about">
-                about
+                HOME
               </NavLink>
             </li>
             <li>
               <NavLink
                 className="text-white text-decoration-none "
-                to="/contact"
+                to="/Profil"
               >
-                contact
+                PROFIL
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="text-white text-decoration-none "
+                to="/Pendaftaran"
+              >
+                PENDAFTARAN
               </NavLink>
             </li>
           </ul>
