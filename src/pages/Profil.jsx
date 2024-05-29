@@ -20,7 +20,7 @@ export default function Profil() {
           <div className="col-md-12 col-12">
             <img className="w-100" src={pondok} alt="pondok" />
           </div>
-          <div className="col-8 py-5">
+          <div className="col-md-8 col-12 py-5">
             <h4 className="fw-bold text-primary">
               Profil Pondok Pesantren Al-Anwar IV Sarang, Rembang, Jawa Tengah.
             </h4>
