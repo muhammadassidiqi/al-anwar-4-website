@@ -6,6 +6,7 @@ import CardKegiatan from "../CardPondok/CardKegiatan";
 import creative from "../assets/creative.png";
 import belajar from "../assets/belajar.png";
 import kecil from "../assets/kecil.png";
+import { NavLink } from "react-router-dom";
 
 import SMK from "../assets/smk.png";
 import Card from "../CardProgram/ProgramCard";
@@ -29,12 +30,19 @@ export default function SectionHero() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Corrupti, rem! Officia minus totam magni voluptate.
               </p>
-              <button className="btn btn-light text-primary fw-bold m-2">
-                PENDAFTARAN
-              </button>
-              <button type="button" class="btn btn-outline-warning fw-bold">
-                PROFIL
-              </button>
+              <div className="">
+                <NavLink
+                  className="text-white nav-link text-decoration-none d-inline-block "
+                  to="/pendaftaran"
+                >
+                  <button className="btn btn-light text-primary fw-bold m-2">
+                    PENDAFTARAN
+                  </button>
+                </NavLink>
+                <button type="button" class="btn btn-outline-warning fw-bold">
+                  PROFIL
+                </button>
+              </div>
             </div>
             <div className="col-md-6 align-self-end col-12 ">
               <img className="w-100 " src={SMK} alt="smk" />
@@ -43,7 +51,7 @@ export default function SectionHero() {
         </div>
       </section>
       {/* sambutan */}
-      <section class="section-img m-5">
+      <section class="section-img py-5">
         <div className="container h-100 ">
           <div class="row align-items-center ">
             <div class="col-md-6 col-12  order-1 ">

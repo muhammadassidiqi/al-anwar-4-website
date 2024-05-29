@@ -7,7 +7,7 @@ export default function navbar() {
       <div className="container">
         <img src={logo} className="logo" alt="logo al anwar 4" />
         <button
-          className="navbar-toggler"
+          className="navbar-toggler text-white"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -15,7 +15,36 @@ export default function navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon" />
+          <>
+            {/*?xml version="1.0" encoding="utf-8"?*/}
+            {/* Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools */}
+            <svg
+              width="25px"
+              height="25px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 18L20 18"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+              />
+              <path
+                d="M4 12L20 12"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+              />
+              <path
+                d="M4 6L20 6"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+              />
+            </svg>
+          </>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -39,9 +68,25 @@ export default function navbar() {
             <li className="nav-item">
               <NavLink
                 className="text-white nav-link text-decoration-none "
-                to="/Pendaftaran"
+                to="/program"
               >
-                PENDAFTARAN
+                PROGRAM
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="text-white nav-link text-decoration-none "
+                to="/galeri"
+              >
+                GALERI
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="text-white nav-link text-decoration-none "
+                to="/kontak"
+              >
+                KONTAK
               </NavLink>
             </li>
           </ul>

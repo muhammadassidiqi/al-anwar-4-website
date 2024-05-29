@@ -1,11 +1,11 @@
 export default function Input() {
   return (
     <>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Nama lengkap dan gelar
         <input type="text" placeholder="username" className="form-control" />
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Nama panggilan
         <input
           type="text"
@@ -13,7 +13,7 @@ export default function Input() {
           className="form-control"
         />
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         NIK/Nomor KTP
         <input
           type="number "
@@ -21,7 +21,7 @@ export default function Input() {
           className="form-control"
         />
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Nomor telepon
         <input
           type="number "
@@ -29,7 +29,7 @@ export default function Input() {
           className="form-control"
         />
       </div>
-      <div className="col-md-12 col-12">
+      <div className="col-md-12 col-12 py-2">
         Email Aktif
         <input
           type="text"
@@ -38,7 +38,7 @@ export default function Input() {
         />
       </div>
 
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Tempat Lahir
         <input
           type="text"
@@ -47,11 +47,11 @@ export default function Input() {
         />
       </div>
 
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Tanggal Lahir
         <input type="date" className="form-control" />
       </div>
-      <div className="col-md-6 col-12 ">
+      <div className="col-md-6 col-12 py-2 ">
         Jenis Kelamin
         <div className="input-group">
           <div className="form-control gap-3 d-flex">
@@ -81,7 +81,7 @@ export default function Input() {
         </div>
       </div>
 
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Pekerjaan
         <input
           type="text"
@@ -89,7 +89,7 @@ export default function Input() {
           className="form-control"
         />
       </div>
-      <div className="col-md-12 col-12">
+      <div className="col-md-12 col-12 py-2">
         Alamat Lengkap
         <input
           type="text"
@@ -98,7 +98,7 @@ export default function Input() {
         />
       </div>
 
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Provinsi
         <select
           class="form-select text-secondary"
@@ -112,7 +112,7 @@ export default function Input() {
           <option value="3">Three</option>
         </select>
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Kabupaten/Kota
         <select
           class="form-select text-secondary"
@@ -126,7 +126,7 @@ export default function Input() {
           <option value="3">Three</option>
         </select>
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Kecamatan
         <select
           class="form-select text-secondary"
@@ -140,7 +140,7 @@ export default function Input() {
           <option value="3">Three</option>
         </select>
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Kelurahan/Desa
         <select
           class="form-select text-secondary"
@@ -154,7 +154,7 @@ export default function Input() {
           <option value="3">Three</option>
         </select>
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Pendidikan Terakhir
         <select
           class="form-select text-secondary"
@@ -168,7 +168,7 @@ export default function Input() {
           <option value="3">Three</option>
         </select>
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Status Pernikahan
         <select
           class="form-select text-secondary"
@@ -182,7 +182,7 @@ export default function Input() {
           <option value="3">Three</option>
         </select>
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Kepengurusan di NU?
         <select
           class="form-select text-secondary"
@@ -196,7 +196,7 @@ export default function Input() {
           <option value="3">Three</option>
         </select>
       </div>
-      <div className="col-md-6 col-12">
+      <div className="col-md-6 col-12 py-2">
         Jabatan Kepengursan
         <select
           class="form-select text-secondary"
@@ -210,7 +210,7 @@ export default function Input() {
           <option value="3">Three</option>
         </select>
       </div>
-      <div className="col-md-12 col-12">
+      <div className="col-md-12 col-12 py-2">
         Apakah pernah belajar dan mengaji di Pondok Pesantren?*
         <div className=" form-check">
           <input

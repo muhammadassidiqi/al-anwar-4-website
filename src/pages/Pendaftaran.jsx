@@ -10,7 +10,7 @@ export default function Pendaftaran() {
           <div className="bg overlay-bg"></div>
           <img className="bg img-bg" src={anak} alt="anak" />
 
-          <h3 className="fw-bold text-white p-5">PROFILE</h3>
+          <h3 className="fw-bold text-white p-5">PENDAFTARAN</h3>
         </div>
       </section>
       {/* row wrapper  */}
