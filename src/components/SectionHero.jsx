@@ -21,6 +21,10 @@ export default function SectionHero() {
         "https://diki.neuversity.site/wp-json/wp/v2/posts"
       );
 
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
       const data = await response.json();
       setPosts(data);
     } catch (error) {
