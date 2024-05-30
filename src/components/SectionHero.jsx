@@ -10,8 +10,27 @@ import { NavLink } from "react-router-dom";
 
 import SMK from "../assets/smk.png";
 import Card from "../CardProgram/ProgramCard";
+import { useEffect, useState } from "react";
 
 export default function SectionHero() {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async () => {
+    try {
+      const response = await fetch(
+        "https://diki.neuversity.site/wp-json/wp/v2/posts"
+      );
+
+      const data = await response.json();
+      setPosts(data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
   return (
     <>
       <section className="section-hero">
@@ -167,33 +186,15 @@ export default function SectionHero() {
             Kegiatan pondok
           </h2>
           <div className="row">
-            <div className="col-md-4 col-12 mt-4">
-              <CardKegiatan
-                image={creative}
-                judul="creative"
-                deskription="Lorem ipsum dolor sit amet consectetur. 
-                Non tristique eget mi sed massa praesent imperdiet morbi quis."
-                date="10/20/2024"
-              />
-            </div>
-            <div className="col-md-4 col-12 mt-4">
-              <CardKegiatan
-                image={belajar}
-                judul="belajar"
-                deskription="Lorem ipsum dolor sit amet
-                 consectetur. Non tristique eget mi sed massa praesent imperdiet morbi quis."
-                date="10/20/2024"
-              />
-            </div>
-            <div className="col-md-4 col-12 mt-4">
-              <CardKegiatan
-                image={kecil}
-                judul="kecil"
-                deskription="Lorem ipsum dolor sit amet consectetur.
-                 Non tristique eget mi sed massa praesent imperdiet morbi quis."
-                date="10/20/2024"
-              />
-            </div>
+            {posts.map((post) => (
+              <div className="col-md-4 col-12 mt-4">
+                <CardKegiatan
+                  image={creative}
+                  judul={post.title.rendered}
+                  date={post.date}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

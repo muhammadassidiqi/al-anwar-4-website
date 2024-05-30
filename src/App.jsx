@@ -7,6 +7,8 @@ import Kontak from "./pages/Kontak";
 import Program from "./pages/Program";
 import Galeri from "./pages/Galeri";
 import Notfound from "./pages/Notfound";
+import Dashboard from "./pages/ADMIN/Dashboard";
+import Admin from "./pages/ADMIN/Admin";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/Kontak" element={<Kontak />} />
         <Route path="/Program" element={<Program />} />
         <Route path="/Galeri" element={<Galeri />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/Admin" element={<Admin />} />
         <Route path="/*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>
