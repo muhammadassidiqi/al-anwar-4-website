@@ -5,19 +5,13 @@ export default function Admin() {
     <>
       <NavbarAdmin />
 
-      <section
-        className=" container d-flex justify-content-center align-items-center  "
-        style={{
-          height: "100vh",
-          width: "50vw",
-        }}
-      >
-        <form className="border w-100 border-dark py-5 px-5">
+      <section className="container d-flex justify-content-center align-items-center section-admin py-5 ">
+        <form className="border w-100 border-dark py-5 px-5 col-12">
           <div className="form-group ">
             <div className="justify-content-center">
               <h2>Membuat postingan Blog</h2>
             </div>
-            <div className="py-1">
+            <div className="py-1 col-12">
               featured media
               <input type="file" className="form-control" />
             </div>
@@ -31,7 +25,7 @@ export default function Admin() {
               placeholder="judul Blog.."
             />
           </div>
-          <div className="form-group py-1">
+          <div className="form-group py-1 col-12">
             <label htmlFor="exampleInputPassword1">Content</label>
             <input
               type="text"

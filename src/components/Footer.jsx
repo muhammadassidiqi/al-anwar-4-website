@@ -12,8 +12,8 @@ export default function Footer() {
       >
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-12">
-              <h1 className="text-white fw-bold">
+            <div className="col-md-8 col-12 py-2">
+              <h1 className="text-white fw-bold text-center text-md-start">
                 Mewujudkan santri yang berakhlakul karimah, berbudi,religius dan
                 berwawasan intelektual.
               </h1>
@@ -21,7 +21,7 @@ export default function Footer() {
               <div className="bg overlay-bg"></div>
               <img className="bg img-bg" src={upacar} alt="img" />
             </div>
-            <div className="col-md-4 col-12">
+            <div className="col-md-4 col-12 d-flex justify-content-center">
               <div className="icon-container">
                 <div className="icon-container2">
                   <img src={youtube} alt="youtube" />
@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
       </section>
 
-      <div className=" text-center bg-primary">
+      <div className=" text-center bg-primary py-3">
         <p className="card-text text-white">Copyrigh © 2024 Al-Anwar Media</p>
       </div>
     </>

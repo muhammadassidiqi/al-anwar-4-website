@@ -11,6 +11,7 @@ import { NavLink } from "react-router-dom";
 import SMK from "../assets/smk.png";
 import Card from "../CardProgram/ProgramCard";
 import { useEffect, useState } from "react";
+import Profil from "../pages/Profil";
 
 export default function SectionHero() {
   const [posts, setPosts] = useState([]);
@@ -18,7 +19,7 @@ export default function SectionHero() {
   const fetchPosts = async () => {
     try {
       const response = await fetch(
-        "https://diki.neuversity.site/wp-json/wp/v2/posts"
+        "https://diki.neuversity.site/wp-json/wp/v2/posts?_embed"
       );
 
       if (!response.ok) {
@@ -44,7 +45,7 @@ export default function SectionHero() {
           <img className="bg img-bg" src={cewek} alt="" />
 
           <div className="row h-100">
-            <div className="col-md-6 col-12 align-self-center ">
+            <div className="col-md-6 col-12 align-self-center py-4 ">
               <h4 className="text-warning">selamat datang </h4>
               <h1 className="fw-bold text-white ">
                 Pondok Pesantren Al-Anwar IV Sarang
@@ -62,9 +63,13 @@ export default function SectionHero() {
                     PENDAFTARAN
                   </button>
                 </NavLink>
-                <button type="button" class="btn btn-outline-warning fw-bold">
+                <NavLink
+                  to={"/Profil"}
+                  type="button"
+                  className="btn btn-outline-warning  btn-mb m-3 "
+                >
                   PROFIL
-                </button>
+                </NavLink>
               </div>
             </div>
             <div className="col-md-6 align-self-end col-12 ">
@@ -80,7 +85,7 @@ export default function SectionHero() {
             <div class="col-md-6 col-12  order-1 ">
               <img class="w-100 " src={guzyasin} alt="ilustration" />
             </div>
-            <div class="col-md-6 col-12  order-2 ">
+            <div class="col-md-6 col-12  order-2 py-4">
               <h4>K.H.Taj Yasin Maimoen</h4>
               <h2 class="fw-bold">
                 Sambutan Pengasuh Pondok Pesantren Al-Anwar IV Sarang, Rembang,
@@ -172,7 +177,7 @@ export default function SectionHero() {
       </section>
       {/* background overlay */}
       <section className="section-hero d-flex align-items-center text-center">
-        <div className="container">
+        <div className="container py-4">
           <p className="text-warning">K. H. Maimoen Zubair</p>
           <h1 className="text-white">
             “Ojo mikir engko dadi opo. Sing penting saiki sinau sing sergep.”
@@ -193,7 +198,12 @@ export default function SectionHero() {
             {posts.map((post) => (
               <div className="col-md-4 col-12 mt-4">
                 <CardKegiatan
-                  image={creative}
+                  image={
+                    post._embedded["wp:featuredmedia"]
+                      ? post._embedded["wp:featuredmedia"][0].media_details
+                          .sizes.medium.source_url
+                      : "https://picsum.photos/420/420"
+                  }
                   judul={post.title.rendered}
                   date={post.date}
                 />

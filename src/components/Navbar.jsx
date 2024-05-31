@@ -5,7 +5,9 @@ export default function navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-primary">
       <div className="container">
-        <img src={logo} className="logo" alt="logo al anwar 4" />
+        <NavLink to={"/"}>
+          <img src={logo} className="logo" alt="logo al anwar 4" />
+        </NavLink>
         <button
           className="navbar-toggler text-white"
           type="button"
