@@ -1,6 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import FooterAdmin from "../../ComponentsAdmin/FooterAdmin";
 import NavbarAdmin from "../../ComponentsAdmin/NavbarAdmin";
+import { useEffect } from "react";
+
 export default function Admin() {
+  const navigate = useNavigate();
+
+  function checkAouth() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/admin/login");
+    }
+  }
+
+  // check authentikasi ketika pertama kali halaman di load
+  // useeffeck mounting
+  useEffect(() => {
+    checkAouth();
+  }, []);
   return (
     <>
       <NavbarAdmin />

@@ -202,7 +202,7 @@ export default function SectionHero() {
                     post._embedded["wp:featuredmedia"]
                       ? post._embedded["wp:featuredmedia"][0].media_details
                           .sizes.medium.source_url
-                      : "https://picsum.photos/420/420"
+                      : "https://picsum.photos/350/350"
                   }
                   judul={post.title.rendered}
                   date={post.date}

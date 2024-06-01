@@ -1,5 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo ponpes.png";
 export default function NavbarAdmin() {
+  const navigate = useNavigate();
+  function handleLogout() {
+    const konfirmasi = confirm("apakah kamu yakin untuk logout?");
+    if (konfirmasi) {
+      localStorage.removeItem("token");
+      navigate("/admin/login");
+    }
+  }
   return (
     <nav className="navbar bg-primary ">
       <div className="container">
@@ -7,7 +16,11 @@ export default function NavbarAdmin() {
           <img src={Logo} alt="" />
         </a>
 
-        <button className="btn btn-danger" type="submit">
+        <button
+          onClick={handleLogout}
+          className="btn btn-danger btn-sm"
+          type="submit"
+        >
           Logout
         </button>
       </div>

@@ -1,4 +1,36 @@
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function Dashboard() {
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [isSuccess, setIsSuccess] = useState(null);
+  const [data, setData] = useState(null);
+  const navigate = useNavigate();
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    fetch("https://diki.neuversity.site/wp-json/jwt-auth/v1/token", {
+      method: "POST",
+      body: new URLSearchParams({
+        username: username,
+        password: password,
+      }),
+    })
+      .then((resp) => resp.json())
+
+      .then((data) => {
+        console.log(data);
+        if (data.token) {
+          alert("berhasil");
+          // set token ke localstorage
+          localStorage.setItem("token", data.token);
+          navigate("/admin");
+        } else alert("gagal");
+      })
+
+      .catch((error) => console.error("Error:", error));
+  }
   return (
     <>
       <section className=" container d-flex w-100 justify-content-center align-items-center section-admin py-5  ">
@@ -13,6 +45,8 @@ export default function Dashboard() {
             <div className="input-group">
               <input
                 type="email"
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
                 className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
@@ -26,6 +60,8 @@ export default function Dashboard() {
             <div className="input-group">
               <input
                 type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
                 className="form-control"
                 placeholder="Password"
               />
@@ -33,7 +69,11 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <button type="submit" className="btn btn-primary mt-2">
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            className="btn btn-primary mt-2"
+          >
             Submit
           </button>
         </form>
