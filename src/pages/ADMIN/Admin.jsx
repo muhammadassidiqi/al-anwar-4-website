@@ -8,7 +8,29 @@ export default function Admin() {
   const [Judul, setJudul] = useState("");
   const [Konten, setKonten] = useState("");
   const navigate = useNavigate();
-  function createPost() {
+
+  // state image
+  const [image, setImage] = useState(null);
+
+  async function uploadImage() {
+    const formData = new FormData();
+    formData.append("file", image);
+    const response = await fetch(
+      "https://web.abdulhaxor.my.id/wp-json/wp/v2/media",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: formData,
+      }
+    );
+    const data = await response.json();
+    if (!data.id) throw new Error("tidak ada media");
+    return data.id;
+  }
+  async function createPost() {
+    const featured_media_id = await uploadImage();
     fetch("https://web.abdulhaxor.my.id/wp-json/wp/v2/posts", {
       method: "POST",
       headers: {
@@ -19,6 +41,7 @@ export default function Admin() {
         title: Judul,
         content: Konten,
         status: "publish",
+        featured_media: featured_media_id,
       }),
     }).then(async (response) => {
       const data = await response.json();
@@ -66,6 +89,7 @@ export default function Admin() {
         <form
           onSubmit={handleSubmit}
           className="border w-100 border-dark py-5 px-5 col-12"
+          encType="multipart/form-data"
         >
           <div className="form-group ">
             <div className="justify-content-center">
@@ -73,7 +97,12 @@ export default function Admin() {
             </div>
             <div className="py-1 col-12">
               featured media
-              <input type="file" className="form-control" />
+              <input
+                type="file"
+                className="form-control"
+                onChange={(event) => setImage(event.target.files[0])}
+                id="featured_media"
+              />
             </div>
 
             <label htmlFor="exampleInputEmail1">judul</label>
