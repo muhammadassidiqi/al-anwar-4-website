@@ -9,6 +9,7 @@ import Galeri from "./pages/Galeri";
 import Notfound from "./pages/Notfound";
 import Login from "./pages/ADMIN/Login";
 import Admin from "./pages/ADMIN/Admin";
+import Post from "./pages/Post/Post";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/Galeri" element={<Galeri />} />
         <Route path="/Admin/Login" element={<Login />} />
         <Route path="/Admin" element={<Admin />} />
+        <Route path="/Post/:id" element={<Post />} />
+
         <Route path="/*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>

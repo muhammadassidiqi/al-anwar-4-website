@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import FooterAdmin from "../../ComponentsAdmin/FooterAdmin";
 import NavbarAdmin from "../../ComponentsAdmin/NavbarAdmin";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Admin() {
+  const [Judul, setJudul] = useState("");
+  const [Konten, setKonten] = useState("");
   const navigate = useNavigate();
 
   function checkAouth() {
@@ -36,6 +38,8 @@ export default function Admin() {
             <label htmlFor="exampleInputEmail1">judul</label>
 
             <input
+              value={Judul}
+              onInput={(event) => setJudul(event.target.value)}
               type="text"
               className="form-control"
               id="exampleInputjudul"
@@ -44,10 +48,13 @@ export default function Admin() {
           </div>
           <div className="form-group py-1 col-12">
             <label htmlFor="exampleInputPassword1">Content</label>
-            <input
+            <textarea
+              value={Konten}
+              onInput={(event) => setKonten(event.target.value)}
               type="text"
               className="form-control"
               id="exampleInputcontent"
+              rows={5}
               placeholder="Content Blog.."
             />
           </div>

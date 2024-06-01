@@ -106,71 +106,76 @@ export default function SectionHero() {
       {/* sectio card */}
       <section className="bg-secondary-subtle">
         <div className="container py-5 ">
-          <div className="row align-items-center ">
-            <div className="col-md-4 col-12">
-              <h3>
-                <span className="text-primary"> Program Unggulan</span> Pondok
-                Pesantren Al-Anwar IV
-              </h3>
+          <div className="row">
+            <div className="col-md-4  col-12">
+              <div className="d-flex flex-column h-100">
+                <h3>
+                  <span className="text-primary"> Program Unggulan</span> Pondok
+                  Pesantren Al-Anwar IV
+                </h3>
 
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo inventore at omnis nostrum maiores voluptatem nesciunt
-                ipsum praesentium cumque ad.
-              </p>
-              <img className="w-100" src={ngaji} alt="ngaji" />
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Explicabo inventore at omnis nostrum maiores voluptatem
+                  nesciunt ipsum praesentium cumque ad.
+                </p>
+                <img
+                  className="w-100 img-program object-fit-cover"
+                  src={ngaji}
+                  alt="ngaji"
+                />
+              </div>
             </div>
 
-            <div className="col-md-4 col-12 mt-3 ">
-              <Card
-                judul={
-                  <>
-                    <i class="bi bi-person"></i>
-                    tahfidz alqur'ans
-                  </>
-                }
-                deskripsi="Lorem ipsum dolor sit amet consectetur. 
+            <div className="col-md-4 col-12 mt-3 mt-md-0">
+              <div className="d-flex flex-column h-100">
+                <Card
+                  judul=" tahfidz alqur'an"
+                  deskripsi="Lorem ipsum dolor sit amet consectetur. 
                 Habitant mi pellentesque mattis sollicitudin lectus 
                 sit semper. Magna sagittis egestas proin accumsan
                  non malesuada. Curabitur sapien mi mattis nunc vitae proin semper."
-              />
-              <Card
-                judul="tahfidz alqur'an"
-                deskripsi="Lorem ipsum dolor sit amet consectetur. 
+                />
+                <Card
+                  judul="tahfidz alqur'an"
+                  deskripsi="Lorem ipsum dolor sit amet consectetur. 
                 Habitant mi pellentesque mattis sollicitudin lectus 
                 sit semper. Magna sagittis egestas proin accumsan
                  non malesuada. Curabitur sapien mi mattis nunc vitae proin semper."
-              />
-              <Card
-                judul="tahfidz alqur'an"
-                deskripsi="Lorem ipsum dolor sit amet consectetur. 
+                />
+                <Card
+                  judul="tahfidz alqur'an"
+                  deskripsi="Lorem ipsum dolor sit amet consectetur. 
                 Habitant mi pellentesque mattis sollicitudin lectus 
                 sit semper. Magna sagittis egestas proin accumsan
                  non malesuada. Curabitur sapien mi mattis nunc vitae proin semper."
-              />
+                />
+              </div>
             </div>
             <div className="col-md-4 col-12">
-              <Card
-                judul="tahfidz alqur'an"
-                deskripsi="Lorem ipsum dolor sit amet consectetur. 
+              <div className="d-flex flex-column h-100">
+                <Card
+                  judul="tahfidz alqur'an"
+                  deskripsi="Lorem ipsum dolor sit amet consectetur. 
                 Habitant mi pellentesque mattis sollicitudin lectus 
                 sit semper. Magna sagittis egestas proin accumsan
                  non malesuada. Curabitur sapien mi mattis nunc vitae proin semper."
-              />
-              <Card
-                judul="tahfidz alqur'an"
-                deskripsi="Lorem ipsum dolor sit amet consectetur. 
+                />
+                <Card
+                  judul="tahfidz alqur'an"
+                  deskripsi="Lorem ipsum dolor sit amet consectetur. 
                 Habitant mi pellentesque mattis sollicitudin lectus 
                 sit semper. Magna sagittis egestas proin accumsan
                  non malesuada. Curabitur sapien mi mattis nunc vitae proin semper."
-              />
-              <Card
-                judul="tahfidz alqur'an"
-                deskripsi="Lorem ipsum dolor sit amet consectetur. 
+                />
+                <Card
+                  judul="tahfidz alqur'an"
+                  deskripsi="Lorem ipsum dolor sit amet consectetur. 
               Habitant mi pellentesque mattis sollicitudin lectus 
               sit semper. Magna sagittis egestas proin accumsan
                non malesuada. Curabitur sapien mi mattis nunc vitae proin semper."
-              />
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Dashboard() {
   const [password, setPassword] = useState("");
@@ -10,7 +11,7 @@ export default function Dashboard() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("https://diki.neuversity.site/wp-json/jwt-auth/v1/token", {
+    fetch("https://web.abdulhaxor.my.id/wp-json/jwt-auth/v1/token", {
       method: "POST",
       body: new URLSearchParams({
         username: username,
@@ -22,11 +23,22 @@ export default function Dashboard() {
       .then((data) => {
         console.log(data);
         if (data.token) {
-          alert("berhasil");
+          Swal.fire({
+            title: "success",
+            text: "anda telah berhasil login",
+            icon: "success",
+          });
+
           // set token ke localstorage
           localStorage.setItem("token", data.token);
           navigate("/admin");
-        } else alert("gagal");
+        } else {
+          Swal.fire({
+            title: "Error!",
+            text: "username dan password anda salah",
+            icon: "error",
+          });
+        }
       })
 
       .catch((error) => console.error("Error:", error));

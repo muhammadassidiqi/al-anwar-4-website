@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 
-export default function navbar() {
+export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-primary">
       <div className="container">

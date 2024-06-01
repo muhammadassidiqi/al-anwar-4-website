@@ -2,22 +2,22 @@ export default function Input() {
   return (
     <>
       <div className="col-md-6 col-12 py-2">
-        Nama lengkap dan gelar
+        Nama lengkap
         <input type="text" placeholder="username" className="form-control" />
       </div>
       <div className="col-md-6 col-12 py-2">
-        Nama panggilan
+        Tanggal Lahir
         <input
-          type="text"
+          type="date"
           placeholder="Nama panggilan"
           className="form-control"
         />
       </div>
       <div className="col-md-6 col-12 py-2">
-        NIK/Nomor KTP
+        Alamat Lengkap
         <input
           type="number "
-          placeholder="Nomor Induk Penduduk"
+          placeholder="jln, nomor rumah, RT dan RW, nama kelurahan atau dusun, kecamatan, kabupaten,"
           className="form-control"
         />
       </div>
@@ -29,29 +29,25 @@ export default function Input() {
           className="form-control"
         />
       </div>
-      <div className="col-md-12 col-12 py-2">
+      {/* <div className="col-md-12 col-12 py-2">
         Email Aktif
         <input
           type="text"
           placeholder="Pastikan Email Anda Sudah benar"
           className="form-control"
         />
+      </div> */}
+
+      <div className="col-md-6 col-12 py-2">
+        Nama Orang Tua/Wali
+        <input type="text" placeholder="Nama wali" className="form-control" />
       </div>
 
       <div className="col-md-6 col-12 py-2">
-        Tempat Lahir
-        <input
-          type="text"
-          placeholder="Kota/Kabupaten"
-          className="form-control"
-        />
+        Nomor Telepon Orang Tua/Wali
+        <input type="number" className="form-control" />
       </div>
-
-      <div className="col-md-6 col-12 py-2">
-        Tanggal Lahir
-        <input type="date" className="form-control" />
-      </div>
-      <div className="col-md-6 col-12 py-2 ">
+      {/* <div className="col-md-6 col-12 py-2 ">
         Jenis Kelamin
         <div className="input-group">
           <div className="form-control gap-3 d-flex">
@@ -235,7 +231,7 @@ export default function Input() {
             iya tidak
           </label>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
