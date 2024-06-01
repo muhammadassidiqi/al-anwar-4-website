@@ -1,12 +1,49 @@
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import FooterAdmin from "../../ComponentsAdmin/FooterAdmin";
 import NavbarAdmin from "../../ComponentsAdmin/NavbarAdmin";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export default function Admin() {
   const [Judul, setJudul] = useState("");
   const [Konten, setKonten] = useState("");
   const navigate = useNavigate();
+  function createPost() {
+    fetch("https://web.abdulhaxor.my.id/wp-json/wp/v2/posts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({
+        title: Judul,
+        content: Konten,
+        status: "publish",
+      }),
+    }).then(async (response) => {
+      const data = await response.json();
+      console.log(data);
+      if (response.ok) {
+        Swal.fire({
+          title: "berhasil",
+          text: "postingan berhasil dibuat",
+          icon: "success",
+        });
+
+        // set token ke localstorage
+      } else {
+        Swal.fire({
+          title: "Error!",
+          text: "gagal",
+          icon: "error",
+        });
+      }
+    });
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    createPost();
+  }
 
   function checkAouth() {
     const token = localStorage.getItem("token");
@@ -20,12 +57,16 @@ export default function Admin() {
   useEffect(() => {
     checkAouth();
   }, []);
+
   return (
     <>
       <NavbarAdmin />
 
       <section className="container d-flex justify-content-center align-items-center section-admin py-5 ">
-        <form className="border w-100 border-dark py-5 px-5 col-12">
+        <form
+          onSubmit={handleSubmit}
+          className="border w-100 border-dark py-5 px-5 col-12"
+        >
           <div className="form-group ">
             <div className="justify-content-center">
               <h2>Membuat postingan Blog</h2>

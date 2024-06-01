@@ -1,49 +1,54 @@
 import Navbar from "../../components/Navbar";
 import Post from "../../assets/post.png";
 import Footer from "../../components/Footer";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function postgaleri() {
+  const [post, setPost] = useState(null);
+  const params = useParams();
+
+  useEffect(() => {
+    fetch(
+      `https://web.abdulhaxor.my.id/wp-json/wp/v2/posts/${params.id}?_embed`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.id) setPost(data);
+        console.log(data);
+      });
+  }, []);
+
   return (
     <>
-      <Navbar />
-      <section style={{ height: "30vh", width: "100vw" }}>
-        <img
-          className="w-100 h-100 object-fit-cover"
-          src={Post}
-          alt="postgaleri"
-        />
-      </section>
+      {post ? (
+        <>
+          <Navbar />
+          <section style={{ height: "30vh", width: "100vw" }}>
+            <img
+              src={
+                post._embedded["wp:featuredmedia"]
+                  ? post._embedded["wp:featuredmedia"][0].media_details.sizes
+                      .medium.source_url
+                  : "https://picsum.photos/350/350"
+              }
+              className="w-100 h-100 object-fit-cover"
+            />
+          </section>
 
-      <section className="container mt-5">
-        <h1>hello world</h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
-          voluptates ex excepturi deleniti obcaecati omnis provident placeat
-          ipsa aspernatur assumenda atque totam fugiat, beatae velit animi
-          repellendus eius pariatur laudantium ad doloribus quibusdam
-          perferendis? Voluptas accusantium quod quisquam magnam ratione quidem
-          saepe ad natus exercitationem, quibusdam vero. Labore, atque,
-          dignissimos vero enim non nihil ipsum at rem cumque amet praesentium
-          iure doloribus. Enim voluptates numquam a est, consequuntur repellat
-          consequatur. Excepturi atque delectus, repudiandae quia molestiae,
-          aspernatur voluptas, dicta beatae tempora enim nemo! Illum maiores,
-          soluta dolore officia eos aut necessitatibus reiciendis, fuga
-          consequuntur rerum perspiciatis tempore dignissimos nam asperiores!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ab sunt
-          a eaque voluptatibus magni corrupti libero ipsa quae animi? Pariatur
-          quod atque a inventore alias veniam exercitationem debitis
-          necessitatibus.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam error
-          odio eius, at necessitatibus, ducimus vero magni quibusdam odit soluta
-          sequi earum similique quod voluptatibus illum ab quas aliquam
-          accusantium.
-        </p>
-      </section>
-      <Footer />
+          <section className="container mt-5">
+            <h1>{post.title.rendered}</h1>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: post.content.rendered,
+              }}
+            ></div>
+          </section>
+          <Footer />
+        </>
+      ) : (
+        <>data tidak di temukan </>
+      )}
     </>
   );
 }
