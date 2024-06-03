@@ -8,6 +8,7 @@ export default function Footer() {
         className="section-hero d-flex align-items-center "
         style={{
           marginTop: "5em",
+          height: "80vh",
         }}
       >
         <div className="container py-3">
@@ -19,14 +20,19 @@ export default function Footer() {
               </h1>
               {/* bacground overlay */}
               <div className="bg overlay-bg"></div>
+
               <img className="bg img-bg" src={upacar} alt="img" />
             </div>
             <div className="col-md-4 col-12 d-flex justify-content-center">
-              <div className="icon-container">
+              <a
+                href="https://www.youtube.com/watch?v=RPGids29bOw"
+                target="_blank"
+                className="icon-container"
+              >
                 <div className="icon-container2">
                   <img src={youtube} alt="youtube" />
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ export default function Kontak() {
             <h1>KONTAK</h1>
             <h1 className="fw-bold">Website ini sedang dalam pembangunan</h1>
             <p>
-              Mohon ditunggu ya, website saya masing dalam proses pembangunan.
+              Mohon ditunggu ya, website saya masih dalam proses pembangunan.
               Kamu juga pengen buat website seperti ini?
             </p>
             <NavLink to="/" className="btn btn-danger">

@@ -181,7 +181,10 @@ export default function SectionHero() {
         </div>
       </section>
       {/* background overlay */}
-      <section className="section-hero d-flex align-items-center text-center">
+      <section
+        className="section-hero d-flex align-items-center text-center "
+        style={{ marginTop: "5em", height: "80vh" }}
+      >
         <div className="container py-4">
           <p className="text-warning">K. H. Maimoen Zubair</p>
           <h1 className="text-white">
