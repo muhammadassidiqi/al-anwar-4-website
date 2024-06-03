@@ -25,7 +25,7 @@ export default function Footer() {
             </div>
             <div className="col-md-4 col-12 d-flex justify-content-center">
               <a
-                href="https://www.youtube.com/watch?v=RPGids29bOw"
+                href="https://www.youtube.com/@alanwar4media806"
                 target="_blank"
                 className="icon-container"
               >

@@ -86,6 +86,7 @@ password : ${password}
           onChange={(e) => setEmail(e.target.value)}
           type="text"
           className="form-control"
+          placeholder="email"
         />
       </div>
       {/* <div className="col-md-6 col-12 py-2 ">
