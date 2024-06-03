@@ -39,7 +39,9 @@ export default function Footer() {
       </section>
 
       <div className=" text-center bg-primary py-3">
-        <p className="card-text text-white">Copyrigh © 2024 Al-Anwar Media</p>
+        <p className="card-text text-white">
+          Copyrigh © 2024 muhammadassiddiqi
+        </p>
       </div>
     </>
   );
