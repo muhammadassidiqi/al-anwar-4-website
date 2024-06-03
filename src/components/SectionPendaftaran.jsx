@@ -1,34 +1,69 @@
+import { useState } from "react";
+
 export default function Input() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    window.open(
+      "https://wa.me/62882003724935?text=" +
+        encodeURIComponent(
+          `
+    
+hallo saya ingin mendaftar ke xxx pondok
+
+nama : ${name}
+email : ${email}
+password : ${password}
+  
+
+> blockquote
+
+
+    `.trim()
+        )
+    );
+  }
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <div className="col-md-6 col-12 py-2">
         Nama lengkap
-        <input type="text" placeholder="username" className="form-control" />
-      </div>
-      <div className="col-md-6 col-12 py-2">
-        Tanggal Lahir
         <input
-          type="date"
-          placeholder="Nama panggilan"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          type="text"
+          placeholder="username"
           className="form-control"
         />
       </div>
       <div className="col-md-6 col-12 py-2">
+        password
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          className="form-control"
+        />
+      </div>
+      {/* <div className="col-md-6 col-12 py-2">
         Alamat Lengkap
         <input
           type="number "
           placeholder="jln, nomor rumah, RT dan RW, nama kelurahan atau dusun, kecamatan, kabupaten,"
           className="form-control"
         />
-      </div>
-      <div className="col-md-6 col-12 py-2">
+      </div> */}
+      {/* <div className="col-md-6 col-12 py-2">
         Nomor telepon
         <input
-          type="number "
+          type="number"
           placeholder="08XX-XXXX-XXXX-"
           className="form-control"
         />
-      </div>
+      </div> */}
       {/* <div className="col-md-12 col-12 py-2">
         Email Aktif
         <input
@@ -38,14 +73,19 @@ export default function Input() {
         />
       </div> */}
 
-      <div className="col-md-6 col-12 py-2">
+      {/* <div className="col-md-6 col-12 py-2">
         Nama Orang Tua/Wali
         <input type="text" placeholder="Nama wali" className="form-control" />
-      </div>
+      </div> */}
 
       <div className="col-md-6 col-12 py-2">
-        Nomor Telepon Orang Tua/Wali
-        <input type="number" className="form-control" />
+        email
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          className="form-control"
+        />
       </div>
       {/* <div className="col-md-6 col-12 py-2 ">
         Jenis Kelamin
@@ -232,6 +272,7 @@ export default function Input() {
           </label>
         </div>
       </div> */}
-    </>
+      <button className="btn btn-primary">submit</button>
+    </form>
   );
 }
