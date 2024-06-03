@@ -39,7 +39,7 @@ password : ${password}
           className="form-control"
         />
       </div>
-      <div className="col-md-6 col-12 py-2">
+      <div className="col-md-6  col-12 py-2">
         password
         <input
           value={password}
