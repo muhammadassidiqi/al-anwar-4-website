@@ -19,7 +19,7 @@ export default function SectionHero() {
   const fetchPosts = async () => {
     try {
       const response = await fetch(
-        "https://web.abdulhaxor.my.id/wp-json/wp/v2/posts?_embed"
+        "https://diki.neuversity.site/wp-json/wp/v2/posts?_embed"
       );
 
       if (!response.ok) {
@@ -211,6 +211,7 @@ export default function SectionHero() {
                   judul={post.title.rendered}
                   link={`/post/${post.id}`}
                   date={post.date}
+                  deskription={post.excerpt.rendered}
                 />
               </div>
             ))}

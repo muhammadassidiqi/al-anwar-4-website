@@ -29,7 +29,7 @@ password : ${password}
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div className="col-md-6 col-12 py-2">
+      <div className="mt-2">
         Nama lengkap
         <input
           value={name}
@@ -39,13 +39,14 @@ password : ${password}
           className="form-control"
         />
       </div>
-      <div className="col-md-6  col-12 py-2">
+      <div className="mt-2">
         password
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           className="form-control"
+          placeholder="password"
         />
       </div>
       {/* <div className="col-md-6 col-12 py-2">
@@ -78,7 +79,7 @@ password : ${password}
         <input type="text" placeholder="Nama wali" className="form-control" />
       </div> */}
 
-      <div className="col-md-6 col-12 py-2">
+      <div className="mt-2">
         email
         <input
           value={email}
@@ -272,7 +273,7 @@ password : ${password}
           </label>
         </div>
       </div> */}
-      <button className="btn btn-primary">submit</button>
+      <button className="btn btn-primary mt-2">submit</button>
     </form>
   );
 }

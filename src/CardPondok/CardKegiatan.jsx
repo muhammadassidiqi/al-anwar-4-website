@@ -9,12 +9,15 @@ export default function CardKegiatan({
   link,
 }) {
   return (
-    <div className="card w-100">
+    <div className="card w-100 h-100">
       <img src={image} className="card-img-top card-blog-img " alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">{judul}</h5>
-        <p className="card-text">{deskription}</p>
-        <Link to={link} className="btn btn-primary">
+      <div className="card-body d-flex flex-column align-items-start">
+        <h5 className="card-title card-blog-title">{judul}</h5>
+        <p
+          className="card-text card-blog-description"
+          dangerouslySetInnerHTML={{ __html: deskription }}
+        ></p>
+        <Link to={link} className="btn btn-primary mt-auto  ">
           lihat kegiatan
         </Link>
       </div>

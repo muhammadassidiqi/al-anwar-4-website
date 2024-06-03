@@ -14,14 +14,13 @@ export default function Pendaftaran() {
         </div>
       </section>
       {/* row wrapper  */}
-      <section className="bg-secondary-subtle">
+      <section className="">
         <div className="container py-5">
-          <div className="row justify-content-center">
-            <div className="col-md-6 col-12">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-md-4 col-12 justify-content-center">
               {/* row content */}
-              <div className="row ">
-                <Input />
-              </div>
+
+              <Input />
             </div>
           </div>
         </div>

@@ -112,3 +112,17 @@ input[type=number] {
   object-fit: contain;
   background-color: lightgray;
 }
+
+.card-blog-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.card-blog-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

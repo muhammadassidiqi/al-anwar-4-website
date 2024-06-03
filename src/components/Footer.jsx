@@ -10,7 +10,7 @@ export default function Footer() {
           marginTop: "5em",
         }}
       >
-        <div className="container">
+        <div className="container py-3">
           <div className="row">
             <div className="col-md-8 col-12 py-2">
               <h1 className="text-white fw-bold text-center text-md-start">
