@@ -24,7 +24,7 @@ export default function postgaleri() {
       {post ? (
         <>
           <Navbar />
-          <section style={{ height: "30vh", width: "100vw" }}>
+          <section className="post-image">
             <img
               src={
                 post._embedded["wp:featuredmedia"]
