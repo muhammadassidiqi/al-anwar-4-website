@@ -46,7 +46,7 @@ export default function Dashboard() {
   return (
     <>
       <section className=" container d-flex w-100 justify-content-center align-items-center section-admin py-5  ">
-        <form className="border border-dark py-5 px-2  px-md-5">
+        <form className="border border-dark py-5 px-4  px-md-5">
           <div className="form-group ">
             <div className="justify-content-center">
               <h2>Al Anwar 4 Admin Login</h2>
