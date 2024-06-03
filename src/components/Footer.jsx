@@ -7,8 +7,8 @@ export default function Footer() {
       <section
         className="section-hero d-flex align-items-center "
         style={{
-          marginTop: "5em",
-          height: "80vh",
+          marginTop: "2em",
+          height: "75vh",
         }}
       >
         <div className="container py-3">

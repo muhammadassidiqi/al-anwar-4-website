@@ -16,7 +16,7 @@ export default function Admin() {
     const formData = new FormData();
     formData.append("file", image);
     const response = await fetch(
-      "https://web.abdulhaxor.my.id/wp-json/wp/v2/media",
+      "https://diki.neuversity.site/wp-json/wp/v2/media",
       {
         method: "POST",
         headers: {

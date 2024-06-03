@@ -10,7 +10,7 @@ export default function postgaleri() {
 
   useEffect(() => {
     fetch(
-      `https://web.abdulhaxor.my.id/wp-json/wp/v2/posts/${params.id}?_embed`
+      `https://diki.neuversity.site/wp-json/wp/v2/posts/${params.id}?_embed`
     )
       .then((response) => response.json())
       .then((data) => {
