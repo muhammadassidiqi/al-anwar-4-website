@@ -31,7 +31,7 @@ export default function Admin() {
   }
   async function createPost() {
     const featured_media_id = await uploadImage();
-    fetch("https://web.abdulhaxor.my.id/wp-json/wp/v2/posts", {
+    fetch("https://diki.neuversity.site/wp-json/wp/v2/posts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -11,7 +11,7 @@ export default function Dashboard() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("https://web.abdulhaxor.my.id/wp-json/jwt-auth/v1/token", {
+    fetch("https://diki.neuversity.site/wp-json/jwt-auth/v1/token", {
       method: "POST",
       body: new URLSearchParams({
         username: username,
